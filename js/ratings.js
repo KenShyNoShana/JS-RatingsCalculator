@@ -1,4 +1,4 @@
-let test = {
+let ratings = {
     count: 0,
     sum: 0,
     average: 0
@@ -13,19 +13,19 @@ mainDiv[0].addEventListener("change", () => {
 
     if(avg.value > 0)
         {
-            test.count = 0;
-            test.sum = 0;
+            ratings.count = 0;
+            ratings.sum = 0;
         }
 
     elements.forEach(element => {
         rating = parseInt(element.id.replace("star", ""));
-        test.count += parseInt(element.value);
-        test.sum += parseInt(element.value) * rating;
+        ratings.count += parseInt(element.value);
+        ratings.sum += parseInt(element.value) * rating;
     });
 
-    if(test.count !== 0)
+    if(ratings.count !== 0)
     {
-        test.average = test.sum / test.count;
-        avg.value = test.average.toFixed(2);
+        ratings.average = ratings.sum / ratings.count;
+        avg.value = ratings.average.toFixed(2);
     }
 })
